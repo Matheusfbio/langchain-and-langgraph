@@ -1,107 +1,107 @@
-# Curso LangChain e LangGraph
+# 📚 Estudos — LangChain & LangGraph
 
-Este repositório acompanha a playlist no YouTube sobre **LangChain** e
-**LangGraph**.
+Repositório de estudos baseado na playlist do YouTube sobre **LangChain** e **LangGraph**, focado na construção de **agentes ReAct** com grafos de execução.
 
-Playlist completa:
-[YouTube — Curso LangChain & LangGraph](https://www.youtube.com/playlist?list=PLbIBj8vQhvm09IqqLYIwLF5dGrcbJzFZc)
-
-O **foco principal é o vídeo**. Aqui você encontra apenas o **material de
-apoio**: exemplos de código e explicações em texto que complementam o conteúdo
-mostrado nas aulas.
+> Playlist original: [YouTube — Curso LangChain & LangGraph](https://www.youtube.com/playlist?list=PLbIBj8vQhvm09IqqLYIwLF5dGrcbJzFZc)
 
 ---
 
-## Estrutura do repositório
+## 🧠 O que estou aprendendo
+
+### LangChain
+Framework para trabalhar com LLMs. Resolve integração com modelos, RAG, tools externas e encadeamento de chamadas via **LCEL (LangChain Expression Language)**. Ideal para pipelines lineares:
+
+```
+Prompt → LLM → Resposta → FIM
+```
+
+### LangGraph
+Extensão do LangChain para fluxos complexos baseados em **grafos de execução**. Permite:
+
+- Condições (ex: se o LLM pedir uma tool, segue por um caminho; senão, por outro)
+- Loops controlados
+- Estado persistente ao longo da conversa
+
+Enquanto o LangChain brilha em pipelines simples, o **LangGraph é feito para agentes**.
+
+---
+
+## 🗂️ Estrutura do projeto
 
 ```
 .
-├── docs/               # Textos de apoio (um por aula)
-│   ├── 001-*.md
-│   ├── 002-*.md
-│   └── ...
-├── src/examples/       # Exemplos de código (um por aula)
-│   ├── ex001/
-│   ├── ex002/
-│   └── ...
+├── docs/               # Anotações de cada aula (.md)
+├── src/examples/       # Código de cada aula
+│   ├── ex001/          # Chat simples com LangChain
+│   ├── ex002/          # ...
+│   └── ex012/
 ├── pyproject.toml      # Dependências (uv)
 └── uv.lock
 ```
 
-- Os arquivos em `docs/` seguem a numeração das aulas.
-- Os diretórios em `src/examples/` seguem a mesma numeração, cada um com os
-  códigos usados em aula.
-- Assim, fica fácil relacionar **vídeo -> doc -> exemplo de código**.
+Cada `exNNN/` em `src/examples/` corresponde a um `NNN-*.md` em `docs/` e a uma aula no YouTube.
 
 ---
 
-## Aulas disponíveis
+## 📖 Aulas
 
-- [001 — LangChain vs LangGraph](./docs/001-langchain-vs-langgraph.md)
-- [002 — Chat simples com LangChain](./docs/002-chat-simples-langchain.md)
-- [003 — Introdução ao LangGraph](./docs/003-introducao-ao-langgraph.md)
-- [004 — LangGraph com LLM](./docs/004-langgraph-com-llm.md)
-- [005 — LangChain com LLM e Tools](./docs/005-llm-com-tools-langchain.md)
-- [006 — LangStudio](./docs/006-langgraph-studio.md)
-- [007 — config e RunnableConfig](./docs/007-runnable-config.md)
-- [008 — ToolNode e tools_conditions](./docs/008_toolnode_tools_condition.md)
-- [009 — Context, Runtime e ToolRuntime](./docs/009-runtime-toolruntime-context.md)
-- [010 — Conceito de Lifespan](./docs/010-lifespan.md)
-
-_(esta lista será atualizada conforme novas aulas forem publicadas - quando/se
-eu lembrar disso)_
-
----
-
-## Exemplos de Código
-
-Abaixo estão as pastas com exemplos de código para cada aula
-
-- [ex001](./src/examples/ex001)
-- [ex002](./src/examples/ex002)
-- [ex003](./src/examples/ex003)
-- [ex004](./src/examples/ex004)
-- [ex005](./src/examples/ex005)
-- [ex006](./src/examples/ex006)
-- [ex007](./src/examples/ex007)
-- [ex008](./src/examples/ex008)
-- [ex008](./src/examples/ex008)
-- [ex009](./src/examples/ex009)
-- [ex009](./src/examples/ex010)
+| # | Tema | Doc | Código |
+|---|------|-----|--------|
+| 001 | LangChain vs LangGraph | [doc](./docs/001-langchain-vs-langgraph.md) | [ex001](./src/examples/ex001) |
+| 002 | Chat simples com LangChain | [doc](./docs/002-chat-simples-langchain.md) | [ex002](./src/examples/ex002) |
+| 003 | Introdução ao LangGraph | [doc](./docs/003-introducao-ao-langgraph.md) | [ex003](./src/examples/ex003) |
+| 004 | LangGraph com LLM | [doc](./docs/004-langgraph-com-llm.md) | [ex004](./src/examples/ex004) |
+| 005 | LLM com Tools | [doc](./docs/005-llm-com-tools-langchain.md) | [ex005](./src/examples/ex005) |
+| 006 | LangGraph Studio | [doc](./docs/006-langgraph-studio.md) | [ex006](./src/examples/ex006) |
+| 007 | RunnableConfig | [doc](./docs/007-runnable-config.md) | [ex007](./src/examples/ex007) |
+| 008 | ToolNode e tools_condition | [doc](./docs/008_toolnode_tools_condition.md) | [ex008](./src/examples/ex008) |
+| 009 | Context e ToolRuntime | [doc](./docs/009-runtime-toolruntime-context.md) | [ex009](./src/examples/ex009) |
+| 010 | Lifespan | [doc](./docs/010-lifespan.md) | [ex010](./src/examples/ex010) |
+| 011 | Checkpointers | [doc](./docs/011-checkpointers.md) | [ex011](./src/examples/ex011) |
+| 012 | Checkpointers pt.2 | [doc](./docs/012-checkpointers-part2.md) | [ex012](./src/examples/ex012) |
 
 ---
 
-## Como rodar os exemplos
+## 🚀 Como rodar
 
-Este projeto usa [uv](https://docs.astral.sh/uv/) para gerenciar dependências.
+O projeto usa [uv](https://docs.astral.sh/uv/) para gerenciar dependências.
 
-### Instalar dependências
+### 1. Instalar dependências
 
 ```bash
 uv sync
 ```
 
-### Rodar exemplos
+### 2. Configurar variáveis de ambiente
 
-Você precisa criar o seu arquivo `.env` conforme mostro nas primeiras aulas.
+Copie o arquivo de exemplo e preencha com suas chaves:
 
 ```bash
-uv run --env-file=".env" src/examples/ex001/main.py
+cp .env-example .env
 ```
 
-Na aula em vídeo eu menciono qual pasta estou usando (`ex001`, `ex002`, ...).
-Veja também o doc correspondente em `docs/NNN-*.md`.
+### 3. Rodar um exemplo
+
+```bash
+uv run --env-file=".env" src/examples/ex004/code001.py
+```
+
+Troque `ex004/code001.py` pelo exemplo da aula que quiser rodar.
 
 ---
 
-## Links úteis
+## 🛠️ Tecnologias
 
-Se quiser me acompanhar. No meu site tem cursos que tenho e na newsletter te
-mando tudo que publico gratuitamente pelo menos 3 vezes por semana.
-
-- 🌐 Site: [otaviomiranda.com.br](https://www.otaviomiranda.com.br/)
-- 📰 Newsletter: [luizomf.substack.com](https://luizomf.substack.com/)
-
-É isso por agora.
+- **Python 3.13**
+- **LangChain** — integração com LLMs e tools
+- **LangGraph** — grafos de execução para agentes
+- **Google Gemini** (`gemini-2.5-flash`) — modelo LLM principal
+- **Ollama** — suporte a modelos locais
+- **Rich** — output formatado no terminal
+- **uv** — gerenciador de dependências
 
 ---
+
+## 📝 Licença
+
+MIT
