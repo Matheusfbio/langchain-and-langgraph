@@ -1,3 +1,5 @@
+# Copyright (c) LangChain_LangGraph course contributors
+
 from collections.abc import Sequence
 from typing import Annotated, TypedDict
 
@@ -6,10 +8,13 @@ from langchain_core.messages import BaseMessage, HumanMessage
 from langgraph.graph import END, START, StateGraph, add_messages
 from langgraph.graph.message import Messages
 from rich import print
+from rich.console import Console
 from rich.markdown import Markdown
 
-# llm = init_chat_model("google_genai:gemini-2.5-flash")
-llm = init_chat_model("ollama:gpt-oss:20b")
+console = Console()
+
+llm = init_chat_model("google_genai:gemini-2.5-flash")
+# llm = init_chat_model("ollama:gpt-oss:20b")
 
 
 # NÃO PRECISA FAZER ISSO
@@ -56,7 +61,8 @@ if __name__ == "__main__":
         human_message = HumanMessage(user_input)
         current_messages = [*current_messages, human_message]
 
-        result = graph.invoke({"messages": current_messages})
+        with console.status("[bold green]Aguardando resposta...[/bold green]", spinner="dots"):
+            result = graph.invoke({"messages": current_messages})
         current_messages = result["messages"]
 
         print(Markdown(str(result["messages"][-1].content)))

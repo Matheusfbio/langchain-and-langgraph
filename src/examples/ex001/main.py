@@ -30,7 +30,7 @@ from langchain.chat_models import init_chat_model
 # llm = init_chat_model("openai:gpt-5-nano")
 
 # Para Google Gemini
-# llm = init_chat_model("google_genai:gemini-2.5-flash")
+llm = init_chat_model("google_genai:gemini-2.5-flash")
 
 # Para Ollama
 # llm = init_chat_model("ollama:gpt-oss:20b")
@@ -39,7 +39,7 @@ from langchain.chat_models import init_chat_model
 
 # Vou usar Ollama neste exemplo
 
-llm = init_chat_model("ollama:gpt-oss:20b")
+# llm = init_chat_model("ollama:gpt-oss:20b")
 
 # A beleza do LangChain é que daqui para baixo, tudo é praticamente igual
 # para qualquer modelo.

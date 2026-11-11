@@ -8,7 +8,8 @@ authors = [{ name = "Luiz Otávio" }]
 requires-python = ">=3.13"
 dependencies = [
   "aiosqlite>=0.21.0",
-  "langchain>=1.0.8",
+  "httpx<1.0.0",
+  "langchain[google-genai]>=1.0.8",
   "langchain-core>=1.0.7",
   "langchain-google-genai>=3.1.0",
   "langchain-ollama>=1.0.0",
